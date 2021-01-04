@@ -1,18 +1,20 @@
-import React, { useEffect} from 'react';
+import React,{useEffect} from 'react';
 import {connect} from 'react-redux';
-import {getBestProducts } from '../../redux/actions/productActions';
-import {Link} from 'react-router-dom'
- function ProductsHomeCard({bestProducts,getBestProducts}) {
-	useEffect(() => {
-  getBestProducts()
-	},[]);
- console.log(bestProducts.productListReducer);
+import {getProducts} from '../../redux/actions/productActions'
+
+
+ function ProductList({products,getProducts}) {
+	 useEffect(() => {
+		 getProducts()
+	 }, [])
+	 console.log(products)
 	return (
-		<section id="portfolio" className="portfolio section-bg">
+		 <div>
+			 <section id="portfolio" className="portfolio section-bg">
 			<div className="container">
 				<div className="row portfolio-container">
 				{
-				 	bestProducts.bestProductListReducer.slice(0,9).map(item=>(
+				  products.productListReducer.map(item=>(
 					<div className="col-lg-4 col-md-6 portfolio-item">
 							<div className="portfolio-wrap">
 								<img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
@@ -33,24 +35,20 @@ import {Link} from 'react-router-dom'
 						
 					))
 				}
-						
-				
 				</div>
 			</div>
-			<div className="row portfolio-container">
-				<Link to={"/urunler"} className="mx-auto">Tümünü Gör</Link>
-			</div>
 		</section>
-	);
+		 </div>
+	)
 }
-const mapStateToProps=state=>{
+const mapStateToProps = state =>{
 	return {
-		bestProducts:state
+		products:state
 	}
 }
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = dispatch => {
 	return {
-		getBestProducts:()=>dispatch(getBestProducts())
+		getProducts : ()=>dispatch(getProducts())
 	}
 }
-export default connect(mapStateToProps,mapDispatchToProps)(ProductsHomeCard)
+export default connect(mapStateToProps,mapDispatchToProps)(ProductList)

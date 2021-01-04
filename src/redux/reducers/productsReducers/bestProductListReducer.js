@@ -1,5 +1,5 @@
-import * as actionTypes from  '../actions/actionTypes'
-import initialState from './initialState';
+import * as actionTypes from  '../../actions/actionTypes'
+import initialState from '../initialState';
 
 
 export default function productListReducer(state=initialState.bestProducts,action)
@@ -7,7 +7,7 @@ export default function productListReducer(state=initialState.bestProducts,actio
     switch(action.type)
     {
         case actionTypes.GET_BEST_PRODUCT_SUCCESS:
-            return action.payload;
+						return action.payload
         default:
             return state;
     }

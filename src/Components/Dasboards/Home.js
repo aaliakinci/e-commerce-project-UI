@@ -13,6 +13,7 @@ export default function index() {
 			<BreakBanner/>
 			<WhyUs/>
 			<CategoriesHome/>
+			 
 			<HomeCategoriesFilter/>
 			<ProductsHomeCard/>
 		</div>

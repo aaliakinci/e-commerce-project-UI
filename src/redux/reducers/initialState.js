@@ -1,4 +1,5 @@
 export default {
- bestProducts:[]
-	
+ products:[],	
+ bestProducts:[],
+ categories:[],	
 } 
