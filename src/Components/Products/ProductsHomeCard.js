@@ -5,15 +5,14 @@ import {Link} from 'react-router-dom'
  function ProductsHomeCard({bestProducts,getBestProducts}) {
 	useEffect(() => {
   getBestProducts()
-	},[]);
- console.log(bestProducts.productListReducer);
+	},[getBestProducts]);
 	return (
 		<section id="portfolio" className="portfolio section-bg">
 			<div className="container">
 				<div className="row portfolio-container">
 				{
 				 	bestProducts.bestProductListReducer.slice(0,9).map(item=>(
-					<div className="col-lg-4 col-md-6 portfolio-item">
+					<div className="col-lg-4 col-md-6 portfolio-item" key = {item._id}>
 							<div className="portfolio-wrap">
 								<img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
 								<div className="portfolio-links">
@@ -30,11 +29,8 @@ import {Link} from 'react-router-dom'
 								</div>
 							</div>
 					</div>
-						
 					))
 				}
-						
-				
 				</div>
 			</div>
 			<div className="row portfolio-container">

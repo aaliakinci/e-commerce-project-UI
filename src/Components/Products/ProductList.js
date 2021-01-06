@@ -1,54 +1,55 @@
-import React,{useEffect} from 'react';
-import {connect} from 'react-redux';
-import {getProducts} from '../../redux/actions/productActions'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { addToCart } from '../../redux/actions/cartActions';
+import { zeroCategory } from '../../redux/actions/categoryActions';
+import { getProducts } from '../../redux/actions/productActions';
 
+function ProductList({ products, getProducts, addToCart, currentCategory,zeroCategory }) {
+	useEffect(() => {
 
- function ProductList({products,getProducts}) {
-	 useEffect(() => {
-		 getProducts()
-	 }, [])
-	 console.log(products)
+			getProducts();
+	}, [getProducts]);
+// function filterCategory()
+// {
+// 	return(<p>{currentCategory.categoryName}<button onClick={()=>zeroCategory()}>X</button></p>)
+// }
+ 
 	return (
-		 <div>
-			 <section id="portfolio" className="portfolio section-bg">
-			<div className="container">
-				<div className="row portfolio-container">
-				{
-				  products.productListReducer.map(item=>(
-					<div className="col-lg-4 col-md-6 portfolio-item">
-							<div className="portfolio-wrap">
-								<img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
-								<div className="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-1.jpg" className="venobox" title="App 1">
-										<i className="icofont-plus-circle"></i>
-									</a>
-									<a href="portfolio-details.html" title="More Details">
-										<i className="icofont-link"></i>
-									</a>
-								</div>
-								<div className="portfolio-info">
-									<h4>{item.productName}</h4>
-									<p>{item.unitPrice}</p>
-								</div>
-							</div>
+		<div>
+			{/* {currentCategory.categoryName===undefined?'':filterCategory()} */}
+			{products.productListReducer.map((item) => (
+				<div className="col-lg-4 col-md-6 portfolio-item" key={item._id}>
+					<div className="portfolio-wrap">
+						<img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
+						<div className="portfolio-links">
+							<button onClick={() => addToCart({ quantity: 1, product: item })}>
+								<i className="icofont-plus-circle"></i>
+							</button>
+							<a href="portfolio-details.html" title="More Details">
+								<i className="icofont-link"></i>
+							</a>
+						</div>
+						<div className="portfolio-info">
+							<h4>{item.productName}</h4>
+							<p>{item.unitPrice}</p>
+						</div>
 					</div>
-						
-					))
-				}
 				</div>
-			</div>
-		</section>
-		 </div>
-	)
+			))}
+		</div>
+	);
 }
-const mapStateToProps = state =>{
+const mapStateToProps = (state) => {
 	return {
-		products:state
-	}
-}
-const mapDispatchToProps = dispatch => {
+		products: state,
+		currentCategory: state.changeCategoryReducer,
+	};
+};
+const mapDispatchToProps = (dispatch) => {
 	return {
-		getProducts : ()=>dispatch(getProducts())
-	}
-}
-export default connect(mapStateToProps,mapDispatchToProps)(ProductList)
+		getProducts: () => dispatch(getProducts()),
+		addToCart: (props) => dispatch(addToCart(props)),
+		zeroCategory:()=>dispatch(zeroCategory())
+	};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

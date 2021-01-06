@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function HomeCategoriesFilter() {
+export default function TestFieldBestProducts() {
 	return (
 		<div>
-			<div class="section-title">
+			<div className="section-title">
 				<h2 data-aos="fade-in">En Gözde Ürünler</h2>
 				<p data-aos="fade-in">
 					Siz değerli ziyaretçilerimizin en beğendiği ürünler

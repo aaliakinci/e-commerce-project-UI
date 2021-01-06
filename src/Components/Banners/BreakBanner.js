@@ -2,44 +2,44 @@ import React from 'react'
 
 export default function BreakBanner() {
 	return (
-		<section id="clients" class="clients section-bg">
-					<div class="container">
+		<section id="clients" className="clients section-bg">
+					<div className="container">
 
-						<div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+						<div className="row no-gutters clients-wrap clearfix wow fadeInUp">
 
-							<div class="col-lg-2 col-md-4 col-6">
-								<div class="client-logo">
-									<img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="flip-right" />
+							<div className="col-lg-2 col-md-4 col-6">
+								<div className="client-logo">
+									<img src="assets/img/clients/client-1.png" className="img-fluid" alt="" data-aos="flip-right" />
 								</div>
 							</div>
 
-							<div class="col-lg-2 col-md-4 col-6">
-								<div class="client-logo">
-									<img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100" />
+							<div className="col-lg-2 col-md-4 col-6">
+								<div className="client-logo">
+									<img src="assets/img/clients/client-2.png" className="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100" />
 								</div>
 							</div>
 
-							<div class="col-lg-2 col-md-4 col-6">
-								<div class="client-logo">
-									<img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200" />
+							<div className="col-lg-2 col-md-4 col-6">
+								<div className="client-logo">
+									<img src="assets/img/clients/client-3.png" className="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200" />
 								</div>
 							</div>
 
-							<div class="col-lg-2 col-md-4 col-6">
-								<div class="client-logo">
-									<img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300" />
+							<div className="col-lg-2 col-md-4 col-6">
+								<div className="client-logo">
+									<img src="assets/img/clients/client-4.png" className="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300" />
 								</div>
 							</div>
 
-							<div class="col-lg-2 col-md-4 col-6">
-								<div class="client-logo">
-									<img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="400" />
+							<div className="col-lg-2 col-md-4 col-6">
+								<div className="client-logo">
+									<img src="assets/img/clients/client-5.png" className="img-fluid" alt="" data-aos="flip-right" data-aos-delay="400" />
 								</div>
 							</div>
 
-							<div class="col-lg-2 col-md-4 col-6">
-								<div class="client-logo">
-									<img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="500" />
+							<div className="col-lg-2 col-md-4 col-6">
+								<div className="client-logo">
+									<img src="assets/img/clients/client-6.png" className="img-fluid" alt="" data-aos="flip-right" data-aos-delay="500" />
 								</div>
 							</div>
 

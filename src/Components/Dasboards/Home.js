@@ -3,7 +3,7 @@ import BreakBanner from '../Banners/BreakBanner'
 import HomeBanner from '../Banners/HomeBanner'
 import WhyUs from '../Banners/WhyUs'
 import CategoriesHome from '../Categories/CategoriesHome'
-import HomeCategoriesFilter from '../Categories/HomeCategoriesFilter'
+import TextFieldBestProducts from '../Products/TextFieldBestProducts'
 import ProductsHomeCard from '../Products/ProductsHomeCard'
  
 export default function index() {
@@ -12,10 +12,9 @@ export default function index() {
 			<HomeBanner/>
 			<BreakBanner/>
 			<WhyUs/>
-			<CategoriesHome/>
-			 
-			<HomeCategoriesFilter/>
+			<TextFieldBestProducts/>
 			<ProductsHomeCard/>
+			<CategoriesHome/>
 		</div>
 	)
 }

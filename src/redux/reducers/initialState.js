@@ -1,5 +1,7 @@
 export default {
- products:[],	
+ products:[]	,
  bestProducts:[],
- categories:[],	
+ categories:[],
+ cart:[],
+ currentCategory:[]
 } 

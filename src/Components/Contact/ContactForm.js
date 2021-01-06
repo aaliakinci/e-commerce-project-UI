@@ -2,36 +2,36 @@ import React from 'react'
 
 export default function ContactForm() {
 	return (
-		<section id="contact" class="contact section-bg">
-						<div class="container">
+		<section id="contact" className="contact section-bg">
+						<div className="container">
 
-							<div class="section-title">
+							<div className="section-title">
 								<h2 data-aos="fade-in">Contact</h2>
 								<p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
 							</div>
 
-							<div class="row">
+							<div className="row">
 
-								<div class="col-lg-6">
+								<div className="col-lg-6">
 
-									<div class="row">
-										<div class="col-md-12">
-											<div class="info-box" data-aos="fade-up">
-												<i class="bx bx-map"></i>
+									<div className="row">
+										<div className="col-md-12">
+											<div className="info-box" data-aos="fade-up">
+												<i className="bx bx-map"></i>
 												<h3>Our Address</h3>
 												<p>A108 Adam Street, New York, NY 535022</p>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
-												<i class="bx bx-envelope"></i>
+										<div className="col-md-6">
+											<div className="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+												<i className="bx bx-envelope"></i>
 												<h3>Email Us</h3>
 
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
-												<i class="bx bx-phone-call"></i>
+										<div className="col-md-6">
+											<div className="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+												<i className="bx bx-phone-call"></i>
 												<h3>Call Us</h3>
 
 											</div>
