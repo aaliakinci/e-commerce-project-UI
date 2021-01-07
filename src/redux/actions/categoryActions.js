@@ -6,14 +6,8 @@ export function getCategorySuccess(categories)
 {
 		return	{type:actionTypes.GET_CATEGORY_SUCCESS,payload:categories}
 }
-export function changeCategory(category)
-{
-	return {type:actionTypes.CHANGE_CATEGORY,payload:category}
-} 
-export function zeroCategory()
-{
-	return {type:actionTypes.ZERO_CATEGORY,payload:null}
-} 
+
+
  
 export function getCategory()
 {

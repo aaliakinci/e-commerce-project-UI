@@ -8,13 +8,13 @@ import ProductsHomeCard from '../Products/ProductsHomeCard'
  
 export default function index() {
 	return (
-		<div>
+		<>
 			<HomeBanner/>
 			<BreakBanner/>
 			<WhyUs/>
 			<TextFieldBestProducts/>
 			<ProductsHomeCard/>
 			<CategoriesHome/>
-		</div>
+		</>
 	)
 }

@@ -5,17 +5,19 @@ function CartSummary({ cart }) {
 	function hasCart() {
 		return (
 			<ul>
+				<li className="my-1 d-flex justify-content-around">
+					<span>Ürün</span>
+					<span>Miktar</span>
+				</li>
 				{cart.map((cartItem) => (
-					<li key={cartItem.product._id}>
-						{cartItem.product.productName}
-						{cartItem.quantity}
+					<li className="my-1 border border-right-0 border-left-0 d-flex justify-content-around" key={cartItem.product._id}>
+						<span className="">{cartItem.product.productName}</span>
+						<span>{cartItem.quantity}</span>
 					</li>
 				))}
-				<li>
-					<Link to='/sepet'>Sepete Git </Link>
-				</li>
-				<li>
-					<Link>Sepeti Onayla</Link>
+				<li className="my-1 d-flex justify-content-around">
+					<span className="mx-1 my-2 badge badge-sm badge-info "><Link to='/sepet'>Sepete Git </Link></span>
+					<span className="mx-1 my-2 badge badge-success"><Link to='/siparis'>Sepeti Onayla</Link></span>
 				</li>
 			</ul>
 		);
@@ -29,9 +31,9 @@ function CartSummary({ cart }) {
 	}
 	return (
 		<li className="drop-down">
-			<a href="">
-				<i className="bx bx-cart" style={{ fontSize: '24px' }}></i>
-			</a>
+			<Link to='/sepet'>
+				<i className="bx bx-cart" style={{ fontSize: '28px' }}></i> {cart.length>0?<span className="badge bg-danger py-1 px-2 rounded-pill" style={{color:'white',fontSize:'14px'}}>{cart.length}</span>:''}
+			</Link>
 			{cart.length > 0 ? hasCart() : hasntCart()}
 		</li>
 	);

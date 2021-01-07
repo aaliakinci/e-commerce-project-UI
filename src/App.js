@@ -8,7 +8,7 @@ import Products from './Components/Dasboards/Products';
 import Cart from './Components/Dasboards/Cart';
 function App() {
 	return (
-		<div>
+		<>
 				<Nav/>
 				<Switch>
 					<Route path='/' exact component={Home}/>
@@ -18,7 +18,7 @@ function App() {
 				
 				<Footer/>
 
-		</div>
+		</>
 	);
 }
 
