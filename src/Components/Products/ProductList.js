@@ -24,12 +24,12 @@ function ProductList({ products, getProducts, addToCart }) {
 				{products.productListReducer.map((item) => (
 					<div className="col-lg-4 col-md-6 portfolio-item" key={item._id}>
 						<div className="portfolio-wrap">
-							<img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
+							<img src={item.productImage} className="img-fluid" alt="" />
 							<div className="portfolio-info">
 								<Link to="/" title="Ürün Detayı">
-									<h4>{item.productName}</h4>
+									<h4 className="border border-danger bg-danger rounded-pill" style={{color:'#213b52'}}>{item.productName}</h4>
 								</Link>
-								<p>{item.unitPrice}</p>
+								<p className="border border-danger bg-danger rounded-pill" style={{color:'#213b52'}}>{item.unitPrice>0?item.unitPrice:'Ücretsiz'}</p>
 							</div>
 							<div className="portfolio-links">
 								<button

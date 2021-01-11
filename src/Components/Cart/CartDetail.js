@@ -15,7 +15,7 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 								<div className="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
 									<img
 										className="img-fluid w-100"
-										src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
+										src={item.product.productImage}
 										alt="Sample"
 									/>
 								</div>

@@ -2,6 +2,7 @@ import React from 'react'
 import CartSummary from '../Cart/CartSummary'
 import CategoriesList from '../Categories/CategoriesList'
 import {Link} from 'react-router-dom'
+import Login from '../User/Login'
 export default function Nav() {
 	return (
 			<header id="header">
@@ -18,6 +19,7 @@ export default function Nav() {
 								<CategoriesList/>
 								<li><a href="#contact">İletişime Geç</a></li>
 								<CartSummary/>
+								<Login/>
 							</ul>
 						</nav>
 
