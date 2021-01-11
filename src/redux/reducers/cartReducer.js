@@ -16,6 +16,9 @@ export default function cartReducer(state = initialState.cart, action) {
 			} else {
 				return [...state, { ...action.payload }];
 			}
+		case actionTypes.REMOVE_TO_CART:
+			const filterState = state.filter(x=>x.product._id!==action.payload);
+			return filterState
 		case actionTypes.INCREMENT_QUANTİTY:
 			const incItem = state.find((x) => x.product=== action.payload.product)
 			if(incItem)

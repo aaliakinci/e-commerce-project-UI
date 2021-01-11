@@ -8,7 +8,7 @@ export default function Nav() {
 				<div className="container d-flex align-items-center">
 
 					<div className="logo mr-auto">
-						<h1 className="text-light"><Link to='/'>E-Ticaret Sitesi<span>.</span></Link></h1>
+						<h1 className="text-light"><Link to='/'>Yazılım Dünyası<span>.</span></Link></h1>
       		</div>
 
 						<nav className="nav-menu d-none d-lg-block">

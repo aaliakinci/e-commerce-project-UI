@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {incrementQuantity,decrementQuantity } from '../../redux/actions/cartActions';
-function CartDetail({ cart,incrementQuantity,decrementQuantity }) {
+import {incrementQuantity,decrementQuantity, removeToCart } from '../../redux/actions/cartActions';
+function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 
 	function cartHas() {
 		return (
@@ -54,7 +54,7 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity }) {
 									</div>
 									<div className="d-flex justify-content-between align-items-center">
 										<div>
-											<i className="bx bx-trash"></i> Remove item
+											<button onClick={()=>removeToCart(item.product._id)}><i className="bx bx-trash" >Remove item</i> </button>
 										</div>
 										<p className="mb-0">
 											<span>
@@ -96,6 +96,7 @@ const mapDispatchToProps = dispatch => {
 	return {
 		incrementQuantity:(cartItem)=>dispatch(incrementQuantity(cartItem)),
 		decrementQuantity:(cartItem)=>dispatch(decrementQuantity(cartItem)),
+		removeToCart:(cartItem)=>dispatch(removeToCart(cartItem))
 	};
 }
 export default connect(mapStateToProps,mapDispatchToProps)(CartDetail);

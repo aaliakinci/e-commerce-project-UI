@@ -20,8 +20,8 @@ function CategoriesHome({ categories, getCategory,getProducts}) {
 					
 						<div className="col-md-6 justify-content-center d-flex align-items-stretch" data-aos="fade-right" key={item._id}>
 							<div className="card">
-								<div className="card-img">
-									<img src="assets/img/services-1.jpg" alt="..." />
+								<div className="card-img d-flex justify-content-center">
+									<img src={item.categoryImage} className="img-fluid w-75" alt="..." />
 								</div>
 								<div className="card-body">
 									<h5 className="card-title">
@@ -32,7 +32,7 @@ function CategoriesHome({ categories, getCategory,getProducts}) {
 									</p>
 									<div className="read-more">
 									
-											<button onClick={()=>getProducts(item._id)}><Link to='/urunler'>Tümünü Gör</Link></button>
+											<button className="btn btn-sm" onClick={()=>getProducts(item._id)}><Link to='/urunler'>Tümünü Gör</Link></button>
 									
 									</div>
 								</div>
