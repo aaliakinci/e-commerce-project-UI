@@ -1,20 +1,28 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux'
+import { userLogin } from '../../redux/actions/userActions';
 
- function Login() {
+ function Login({user,userLogin}) {
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState()
 
 	const handleChange = e =>{
 		const name  = e.target.name;
 		const value = e.target.value;
-		setEmail({[name]:value});
-		setPassword({[name]:value});
+		if(name==="email"){
+			setEmail(value);
+		}
+		if(name==="password")
+		{
+			setPassword(value);
+		}
+	
 	 
 	}
 	const handleSubmit = e => {
 		e.preventDefault();
-	 
+	  userLogin(email,password)
 	}
 
 	return (
@@ -55,4 +63,17 @@ import { Link } from 'react-router-dom';
 		</li>
 	);
 }
-export default Login
+const mapStateToProps = state => {
+	return {
+		user : state
+	}
+}
+const mapDispatchToProps = dispatch => {
+	return {
+		userLogin : (email,password) => dispatch(userLogin(email,password))
+	}
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps) (Login)

@@ -3,5 +3,7 @@ export default {
  bestProducts:[],
  categories:[],
  cart:[],
- currentCategory:[]
+ currentCategory:[],
+ user:[],
+ userInfo:[]
 } 

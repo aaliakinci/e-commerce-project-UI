@@ -1,9 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import CartSummary from '../Cart/CartSummary'
 import CategoriesList from '../Categories/CategoriesList'
 import {Link} from 'react-router-dom'
 import Login from '../User/Login'
-export default function Nav() {
+import {connect} from 'react-redux'
+import Profil from '../User/Profile';
+import { isLoginUser } from '../../redux/actions/userActions';
+import cookie from 'js-cookie'
+function Nav({user,isLoginUser}) {
+	const myCookie = cookie.get('yazilimdunyasi');
+	if(myCookie===undefined)
+	{
+		isLoginUser()
+	}
+	useEffect(() => {
+		 isLoginUser()
+	}, [])
 	return (
 			<header id="header">
 				<div className="container d-flex align-items-center">
@@ -19,7 +31,9 @@ export default function Nav() {
 								<CategoriesList/>
 								<li><a href="#contact">İletişime Geç</a></li>
 								<CartSummary/>
-								<Login/>
+								{
+									user._id?<Profil/>:<Login/>
+								}
 							</ul>
 						</nav>
 
@@ -28,3 +42,14 @@ export default function Nav() {
 		 
 	)
 }
+const mapStateToProps = state => {
+	return {
+		user : state.userLoginRegisterReducer,
+	}
+}
+const mapDispatchToProps = dispatch => {
+	return {
+		isLoginUser : () => dispatch(isLoginUser())
+	}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Nav)
