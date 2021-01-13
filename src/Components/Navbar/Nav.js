@@ -2,11 +2,11 @@ import React,{useEffect} from 'react'
 import CartSummary from '../Cart/CartSummary'
 import CategoriesList from '../Categories/CategoriesList'
 import {Link} from 'react-router-dom'
-import Login from '../User/Login'
 import {connect} from 'react-redux'
 import Profil from '../User/Profile';
 import { isLoginUser } from '../../redux/actions/userActions';
 import cookie from 'js-cookie'
+import LoginRegister from './LoginRegister'
 function Nav({user,isLoginUser}) {
 	const myCookie = cookie.get('yazilimdunyasi');
 	if(myCookie===undefined)
@@ -32,7 +32,7 @@ function Nav({user,isLoginUser}) {
 								<li><a href="#contact">İletişime Geç</a></li>
 								<CartSummary/>
 								{
-									user._id?<Profil/>:<Login/>
+									user._id?<Profil/>:<LoginRegister/>
 								}
 							</ul>
 						</nav>

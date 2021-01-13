@@ -17,7 +17,7 @@ function CartSummary({ cart }) {
 				))}
 				<li className="my-1 d-flex justify-content-around">
 					<span className="mx-1 my-2 badge badge-sm badge-info "><Link to='/sepet'>Sepete Git </Link></span>
-					<span className="mx-1 my-2 badge badge-success"><Link to='/siparis'>Sepeti Onayla</Link></span>
+					
 				</li>
 			</ul>
 		);

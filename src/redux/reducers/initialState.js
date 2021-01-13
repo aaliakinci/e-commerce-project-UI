@@ -5,5 +5,7 @@ export default {
  cart:[],
  currentCategory:[],
  user:[],
- userInfo:[]
+ userInfo:[],
+ userComments:[],
+ order:[],
 } 

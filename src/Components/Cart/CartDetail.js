@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {incrementQuantity,decrementQuantity, removeToCart } from '../../redux/actions/cartActions';
-function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
-
+import {
+	incrementQuantity,
+	decrementQuantity,
+	removeToCart,
+} from '../../redux/actions/cartActions';
+function CartDetail({ cart, incrementQuantity, decrementQuantity, removeToCart }) {
 	function cartHas() {
 		return (
 			<div className="card wish-list mb-3">
@@ -13,11 +16,7 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 						<div className="row mb-4" key={item.product._id}>
 							<div className="col-md-5 col-lg-3 col-xl-3">
 								<div className="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-									<img
-										className="img-fluid w-100"
-										src={item.product.productImage}
-										alt="Sample"
-									/>
+									<img className="img-fluid w-100" src={item.product.productImage} alt="Sample" />
 								</div>
 							</div>
 							<div className="col-md-7 col-lg-9 col-xl-9 ">
@@ -31,7 +30,7 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 												<button
 													type="button"
 													className="btn btn-danger btn-sm"
-													onClick={()=>decrementQuantity(item)}
+													onClick={() => decrementQuantity(item)}
 												>
 													<span className="bx bx-minus"></span>
 												</button>
@@ -40,12 +39,13 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 												type="text"
 												className="form-control h-25"
 												value={item.quantity}
+												readOnly
 											/>
 											<span className="input-group-btn">
 												<button
 													type="button"
 													className="btn btn-success btn-sm"
-													onClick={()=>incrementQuantity(item)}
+													onClick={() => incrementQuantity(item)}
 												>
 													<span className="bx bx-plus"></span>
 												</button>
@@ -54,7 +54,9 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 									</div>
 									<div className="d-flex justify-content-between align-items-center">
 										<div>
-											<button onClick={()=>removeToCart(item.product._id)}><i className="bx bx-trash" >Remove item</i> </button>
+											<button onClick={() => removeToCart(item.product._id)}>
+												<i className="bx bx-trash">Remove item</i>{' '}
+											</button>
 										</div>
 										<p className="mb-0">
 											<span>
@@ -92,11 +94,11 @@ function CartDetail({ cart,incrementQuantity,decrementQuantity,removeToCart }) {
 const mapStateToProps = (state) => {
 	return { cart: state.cartReducer };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		incrementQuantity:(cartItem)=>dispatch(incrementQuantity(cartItem)),
-		decrementQuantity:(cartItem)=>dispatch(decrementQuantity(cartItem)),
-		removeToCart:(cartItem)=>dispatch(removeToCart(cartItem))
+		incrementQuantity: (cartItem) => dispatch(incrementQuantity(cartItem)),
+		decrementQuantity: (cartItem) => dispatch(decrementQuantity(cartItem)),
+		removeToCart: (cartItem) => dispatch(removeToCart(cartItem)),
 	};
-}
-export default connect(mapStateToProps,mapDispatchToProps)(CartDetail);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CartDetail);

@@ -4,6 +4,7 @@ import categoryListReducer from './categoriesReducers/categoryListReducer'
 import cartReducer from './cartReducer'
 import userLoginRegisterReducer from './userReducers/userLoginRegisterReducer'
 import userOperationsReducer from './userReducers/userOperationsReducer'
+import userCommentsReducer from './commentsReducers/userCommentsReducer'
 import {combineReducers} from 'redux'
 const rootReducer = combineReducers({
 	productListReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
 	bestProductListReducer,
 	cartReducer,
 	userLoginRegisterReducer,
-	userOperationsReducer
+	userOperationsReducer,
+	userCommentsReducer
 })
 export default rootReducer;

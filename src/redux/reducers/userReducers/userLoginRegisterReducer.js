@@ -18,7 +18,8 @@ export default function userLoginRegisterReducer(state = initialState.user, acti
 			const loginCookie = cookie.getJSON('yazilimdunyasi');
 			if(loginCookie===undefined)
 			{
-			   return state;
+			 
+			  return state;
 			}
 			else{const loginToken = loginCookie.Authorization.substr(6);
 			const loginDecoded = jwt_decode(loginToken);

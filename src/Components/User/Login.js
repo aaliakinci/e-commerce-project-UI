@@ -26,6 +26,7 @@ import { userLogin } from '../../redux/actions/userActions';
 	}
 
 	return (
+		<>
 		<li className="drop-down">
 			<Link to="/uye-girisi">
 				<i className="fa fa-user-circle" aria-hidden="true" style={{ fontSize: '24px' }} /> Üye Girişi
@@ -61,6 +62,8 @@ import { userLogin } from '../../redux/actions/userActions';
 				</li>
 			</ul>
 		</li>
+		</>
+		
 	);
 }
 const mapStateToProps = state => {

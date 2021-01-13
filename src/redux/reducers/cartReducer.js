@@ -12,8 +12,10 @@ export default function cartReducer(state = initialState.cart, action) {
 					}
 					return cartItem;
 				});
+	
 				return newState;
 			} else {
+			
 				return [...state, { ...action.payload }];
 			}
 		case actionTypes.REMOVE_TO_CART:
@@ -30,6 +32,7 @@ export default function cartReducer(state = initialState.cart, action) {
 					}
 					return x;
 				}); 
+				
 				return incrementedState;
 			}else{
 				return state;
