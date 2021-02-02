@@ -1,22 +1,19 @@
 import React from 'react'
-import BreakBanner from '../Banners/BreakBanner'
-import HomeBanner from '../Banners/HomeBanner'
-import WhyUs from '../Banners/WhyUs'
-import CategoriesHome from '../Categories/CategoriesHome'
-import TextFieldBestProducts from '../Products/TextFieldBestProducts'
-import ProductsHomeCard from '../Products/ProductsHomeCard'
-import Footer from '../Footer/Footer'
- 
+import CategoriesHome from '../CategoriesHome/CategoriesHome'
+import ProductsHomeCard from '../ProductsHome/ProductsHome'
+import ConseptHomeBanner from '../ConseptHomeBanner'
+import Catalog from '../Catalog'
+import Carousel from '../Carousel'
 export default function index() {
 	return (
 		<>
-			<HomeBanner/>
-			<BreakBanner/>
-			<WhyUs/>
-			<TextFieldBestProducts/>
+			<Carousel/>
 			<ProductsHomeCard/>
+			<hr/>
+			<ConseptHomeBanner/>
 			<CategoriesHome/>
- 
+			<Catalog/>
+		 
 		</>
 	)
 }

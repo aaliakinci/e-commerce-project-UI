@@ -55,6 +55,7 @@ export function getProductsByBetweenUnitPrice(lowerPrice, higherPrice) {
 				.post(url)
 				.then((response) => {
 					const products = response.data;
+		
 					dispatch(getProductsByBetweenUnitPriceSuccess(products));
 				})
 				.catch((err) => {
@@ -103,13 +104,14 @@ export function getProducts(category) {
 	return function (dispatch) {
 		let url = 'http://localhost:3000/products';
 		if (category) {
+			
 			url = url + '/' + category;
 		}
-
 		axios
 			.get(url)
 			.then((response) => {
 				const products = response.data;
+				console.log(products);
 				dispatch(getProductsSuccess(products));
 			})
 			.catch((err) => {

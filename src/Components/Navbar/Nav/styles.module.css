@@ -1,0 +1,43 @@
+.navLogo{
+	width:200px ;height:50px;
+}
+.sepet {
+	padding:0.5rem 1rem;
+}
+
+.linkcolor {
+
+	color: black !important;
+}
+.linkcolor:hover{
+	color:#ed6905 !important;
+}
+/****** NavBar-Brand********/
+.SiteNavBar {
+	height: 5%;
+	width:95%;
+	/*border-bottom: 1px solid #ed6905;*/
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	border-top:1px solid black;
+	border-bottom: 1px solid black;
+	margin-top:2rem;
+}
+.layoutNavBarBrand {
+	position:relative;
+	float:left;
+	
+}
+
+.layoutNavBarBrand img {
+	float:left;
+	object-fit:fill;
+}
+
+
+
+@media all and (min-width: 992px) {
+ 	.dropdownMenu{ display: none; }
+	.navIitem:hover .dropdownMenu{ display: block; }
+ 	.dropdownMenu{ margin-top:0; }
+}

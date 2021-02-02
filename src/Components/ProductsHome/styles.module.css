@@ -1,0 +1,14 @@
+/*Product Show More BTN*/
+.showMoreBtn {
+	padding: 0.5rem;
+	border: 1px solid #282828 !important;
+	border-radius: 1rem !important;
+	width: 40%;
+	color: black;
+	transition: all 0.3s;
+}
+
+.showMoreBtn:hover {
+	background-color: black;
+	color: white !important;
+}

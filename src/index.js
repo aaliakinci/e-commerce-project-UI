@@ -7,7 +7,10 @@ import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux'
 import configureStore from './redux/reducers/configureStore'
 import rootReducer from './redux/reducers';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Popper from 'popper.js';
 const store = configureStore();
 
 ReactDOM.render(

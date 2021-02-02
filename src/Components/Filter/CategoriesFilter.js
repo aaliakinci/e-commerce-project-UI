@@ -13,14 +13,12 @@ function CategoriesFilter({ categories, getCategory,getProducts,changeCategory,p
  }
 	return (
 			<ul className="list-group w-100">
-			<li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>getProducts()}>
+			<li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>getProducts()} style={{cursor:'pointer'}}>
 					  Tüm Ürünler
-					 <span className="badge bg-primary rounded-pill " style={{color:'white'}}>{products.length}</span>
 					</li>
 				{categories.categoryListReducer.map((item) => (
-					<li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>filter(item)} key ={item._id}>
+					<li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>filter(item)} key ={item._id} style={{cursor:'pointer'}}>
 					 {item.categoryName}
-					 <span className="badge bg-primary rounded-pill " style={{color:'white'}}>{item.products.length}</span>
 					</li>
 				))}
 			</ul>
